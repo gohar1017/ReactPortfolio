@@ -1,0 +1,133 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  background: #f9f9f9;
+  min-height: 100vh;
+  width:1000px;
+  height:200px;
+}
+
+@media (min-width: 900px) {
+  .container {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
+.profileSidebar {
+  width: 100%;
+  max-width: 350px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+  padding: 2rem;
+  height: fit-content;
+  position: sticky;
+  top: 20px;
+}
+
+.mainContent {
+  flex: 1;
+  background: white;
+  width:1000px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+  padding: 2rem;
+}
+
+.avatarContainer {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 1.5rem;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #ff512f;
+  box-shadow: 0 5px 15px rgba(221, 36, 118, 0.2);
+}
+
+.avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.name {
+  color: #ff512f;
+  text-align: center;
+  margin-top: 1rem;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.title {
+  color: #666;
+  text-align: center;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.quote {
+  font-style: italic;
+  color: #555;
+  text-align: center;
+  margin: 1rem 0;
+  font-size: 0.95rem;
+}
+
+.interestsCard {
+  background: linear-gradient(135deg, #fff5f5 0%, #fff 100%);
+  border-left: 4px solid #ff512f;
+  padding: 1rem;
+  margin-top: 1.5rem;
+}
+
+.sectionTitle {
+  color: #ff512f;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.mainTitle {
+  color: #ff512f;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.accordion {
+  margin-bottom: 1rem;
+  border-radius: 8px !important;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  border: 1px solid #eee;
+}
+
+.accordionHeader {
+  background-color: #fff5f5 !important;
+  color: #d9534f !important;
+  font-weight: 600 !important;
+}
+
+.progressBar {
+  height: 10px;
+  border-radius: 5px;
+  margin: 0.5rem 0;
+}
+
+.interestsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.interestCard {
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.interestCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}

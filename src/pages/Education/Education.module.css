@@ -1,0 +1,95 @@
+.container {
+    padding: 2rem;
+    background: linear-gradient(to bottom, #f9f9f9, #f0f2f5);
+    min-height: 100vh;
+    margin-top:10px;
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #ff512f;
+    margin-bottom: 0.5rem;
+  }
+  
+  .subtitle {
+    color: #666;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .educationGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .educationCard {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    border-top: 4px solid #ff512f;
+  }
+  
+  .educationCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  }
+  
+  .educationIcon {
+    font-size: 3rem !important;
+    margin-bottom: 1rem;
+  }
+  
+  .educationContent {
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .educationTitle {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+  
+  .educationDescription {
+    color: #666;
+    margin-bottom: 1.5rem;
+  }
+  
+  .yearBadge {
+    background-color: #ff512f !important;
+    color: white !important;
+    font-weight: 600 !important;
+    padding: 0.3rem 0.8rem !important;
+    border-radius: 20px !important;
+  }
+  
+  .achievements {
+    margin-top: 1rem;
+    color: #555;
+    font-size: 0.9rem;
+  }
+  
+  .achievements::before {
+    content: "★";
+    color: #FFC107;
+    margin-right: 0.3rem;
+  }
+  
+  @media (max-width: 768px) {
+    .educationGrid {
+      grid-template-columns: 1fr;
+    }
+  }

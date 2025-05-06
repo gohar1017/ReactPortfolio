@@ -1,0 +1,63 @@
+.appBar {
+    background-color: #6c2b78 !important; /* Purple color */
+    height: 56px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    
+  }
+  
+  .title {
+    color: #fff !important;
+    font-weight: 500 !important;
+    font-size: 1.25rem !important;
+    letter-spacing: 0.5px;
+    flex-grow: 1;
+  }
+  
+  .avatar {
+    width: 40px !important;
+    height: 40px !important;
+    cursor: pointer;
+    border: 2px solid #fff !important;
+    transition: transform 0.2s ease !important;
+    
+  }
+  
+  .avatar:hover {
+    transform: scale(1.1) !important;
+  }
+  
+  .menu {
+    margin-top: 8px !important;
+  }
+  
+  .menu .MuiPaper-root {
+    border-radius: 4px !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+    border: 1px solid #eee !important;
+  }
+  
+  .menu .MuiMenuItem-root {
+    font-size: 0.9rem !important;
+    padding: 8px 16px !important;
+    color: #333 !important;
+    transition: background-color 0.2s ease !important;
+  }
+  
+  .menu .MuiMenuItem-root:hover {
+    background-color: rgba(0, 0, 0, 0.04) !important;
+  }
+  
+  @media (max-width: 600px) {
+    .appBar {
+      height: 48px !important;
+    }
+  
+    .title {
+      font-size: 1.1rem !important;
+    }
+  
+    .avatar {
+      width: 36px !important;
+      height: 36px !important;
+    }
+  }

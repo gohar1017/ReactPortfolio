@@ -1,0 +1,112 @@
+.drawer {
+  width: auto;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1000;
+}
+
+.drawerHeader {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 2px;
+  min-height: 64px;
+  margin-top: 20px;
+}
+
+.drawer .MuiDrawer-paper {
+  width: 240px;
+  box-sizing: border-box;
+  position: fixed;
+  height: calc(100vh - 80px);
+  top: 80px;
+  padding-top: 20px;
+  background-color: #682fd1;
+  border-right: 1px solid rgba(0, 0, 0, 0.12);
+  transition: width 0.3s ease;
+}
+
+/* Toggle Button Styles */
+.toggleButton {
+  position: absolute;
+  right: -18px;
+  top: 20px;
+  z-index: 1200;
+  background-color: #fff !important;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 8px;
+  transition: all 0.3s ease;
+  margin-top: auto;
+}
+
+.toggleButton:hover {
+  background-color: #f8f8f8 !important;
+  transform: translateX(2px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+.toggleButton svg {
+  color: #4CAF50;
+  font-size: 1.5rem;
+}
+
+/* Collapsed state */
+.drawer .MuiDrawer-paper.collapsed {
+  width: 72px;
+}
+
+.drawer .MuiDrawer-paper.collapsed:hover {
+  width: 240px;
+  box-shadow: 3px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* List items styling */
+.listItem {
+  padding: 8px 16px;
+  margin: 4px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.listItem:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+.listIcon {
+  min-width: 40px;
+  color: inherit;
+  justify-content: center;
+}
+
+.listText {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+/* Collapsed state styles */
+.collapsed .listText {
+  opacity: 0;
+  width: 0;
+}
+
+/* Active link styling */
+.listItem.active {
+  background-color: rgba(25, 118, 210, 0.12);
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 600px) {
+  .drawer .MuiDrawer-paper {
+    top: 56px;
+    height: calc(100vh - 56px);
+    z-index: 1100;
+  }
+  
+  .toggleButton {
+    right: -16px;
+    padding: 6px;
+  }
+}

@@ -1,0 +1,102 @@
+.container {
+    padding: 2rem;
+    background: #f5f7fa;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .contactCard {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    padding: 2.5rem;
+    max-width: 600px;
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+  
+  .socialCard {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    padding: 2rem;
+    max-width: 600px;
+    width: 100%;
+  }
+  
+  .title {
+    color: #ff512f;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+  
+  .subtitle {
+    color: #666;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .formField {
+    margin-bottom: 1.5rem;
+  }
+  
+  .submitButton {
+    background: linear-gradient(to right, #ff512f, #dd2476) !important;
+    color: white !important;
+    padding: 0.8rem !important;
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+    text-transform: none !important;
+    font-size: 1rem !important;
+    box-shadow: 0 4px 15px rgba(221, 36, 118, 0.3) !important;
+    transition: all 0.3s ease !important;
+  }
+  
+  .submitButton:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px rgba(221, 36, 118, 0.4) !important;
+  }
+  
+  .socialIcons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  
+  .socialIcon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  }
+  
+  .socialIcon:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  }
+  
+  .quote {
+    font-style: italic;
+    color: #666;
+    text-align: center;
+    margin-top: 1.5rem;
+  }
+  
+  @media (max-width: 600px) {
+    .contactCard, .socialCard {
+      padding: 1.5rem;
+    }
+    
+    .title {
+      font-size: 1.5rem;
+    }
+  }
