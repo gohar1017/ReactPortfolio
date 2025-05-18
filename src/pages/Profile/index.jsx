@@ -7,7 +7,9 @@ import {
   AccordionDetails, 
   Box, 
   Avatar,
-  LinearProgress
+  LinearProgress,
+  useMediaQuery,
+  useTheme
 } from '@mui/material';
 import { 
   ExpandMore,
@@ -22,66 +24,85 @@ import styles from './Profile.module.css';
 
 export default function Profile() {
   const [expanded, setExpanded] = useState('panel1');
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
   const handleChange = (panel) => (event, newExpanded) => {
     setExpanded(newExpanded ? panel : false);
   };
 
+  const profileInfo = (
+    <>
+      <Box className={styles.avatarContainer}>
+        <Avatar
+          src={profileImage}
+          alt="Ali Gohar"
+          className={styles.avatar}
+          sx={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover'
+          }}
+        />
+      </Box>
+      <Typography variant="h5" className={styles.name}>
+        Ali Gohar
+      </Typography>
+      <Typography variant="body2" className={styles.title}>
+        Web & Mobile App Developer
+      </Typography>
+      <Typography variant="body2" className={styles.quote}>
+        "Passionate about crafting high-performance web and Android applications."
+      </Typography>
+    </>
+  );
+
+  const interestsCard = (
+    <Card className={styles.interestsCard}>
+      <Typography variant="h6" className={styles.sectionTitle}>
+        <Box component="span" mr={1}>★</Box> Passions & Interests
+      </Typography>
+      <Box mt={1}>
+        <Typography variant="body2">
+          <Box component="span" color="primary.main">🎬</Box> Watching Movies
+        </Typography>
+        <Typography variant="body2">
+          <Box component="span" color="success.main">🏏</Box> Playing Cricket
+        </Typography>
+        <Typography variant="body2">
+          <Box component="span" color="warning.main">💻</Box> Coding
+        </Typography>
+      </Box>
+    </Card>
+  );
+
   return (
     <Box className={styles.container}>
-      {/* Sidebar Profile Section */}
-      <Card className={styles.profileSidebar}>
-        <Box textAlign="center" p={3}>
-          <Box className={styles.avatarContainer}>
-            <Avatar
-              src={profileImage}
-              alt="Ali Gohar"
-              className={styles.avatar}
-              sx={{
-                width: '100%',
-                height: '100%',
-                objectFit: 'cover'
-              }}
-              onError={(e) => {
-                e.target.src = '/default-profile.jpg';
-                console.error('Failed to load profile image', e);
-              }}
-            />
-          </Box>
-          <Typography variant="h5" className={styles.name}>
-            Ali Gohar
-          </Typography>
-          <Typography variant="body2" className={styles.title}>
-            Web & Mobile App Developer
-          </Typography>
-          <Typography variant="body2" className={styles.quote}>
-            "Passionate about crafting high-performance web and Android applications."
-          </Typography>
-
-          <Card className={styles.interestsCard}>
-            <Typography variant="h6" className={styles.sectionTitle}>
-              <Box component="span" mr={1}>★</Box> Passions & Interests
-            </Typography>
-            <Box mt={1}>
-              <Typography variant="body2">
-                <Box component="span" color="primary.main">🎬</Box> Watching Movies
-              </Typography>
-              <Typography variant="body2">
-                <Box component="span" color="success.main">🏏</Box> Playing Cricket
-              </Typography>
-              <Typography variant="body2">
-                <Box component="span" color="warning.main">💻</Box> Coding
-              </Typography>
-            </Box>
-          </Card>
+      {/* Mobile Header (only shows on mobile) */}
+      {isMobile && (
+        <Box className={styles.mobileHeader}>
+          {profileInfo}
+          {interestsCard}
         </Box>
-      </Card>
+      )}
+
+      {/* Desktop Sidebar (only shows on larger screens) */}
+      {!isMobile && (
+        <Card className={styles.profileSidebar}>
+          <Box textAlign="center" p={3}>
+            {profileInfo}
+            {interestsCard}
+          </Box>
+        </Card>
+      )}
 
       {/* Main Content */}
       <Box className={styles.mainContent}>
-        <Typography variant="h4" className={styles.mainTitle}>
-          About Me
-        </Typography>
+        {!isMobile && (
+          <Typography variant="h4" className={styles.mainTitle}>
+            About Me
+          </Typography>
+        )}
 
         {/* Background Accordion */}
         <Accordion 
@@ -115,6 +136,8 @@ export default function Profile() {
           </AccordionDetails>
         </Accordion>
 
+        {/* Other Accordions (remain the same) */}
+        
         {/* Goals Accordion */}
         <Accordion 
           expanded={expanded === 'panel2'} 
@@ -174,7 +197,10 @@ export default function Profile() {
             </Box>
           </AccordionDetails>
         </Accordion>
+        {/* ... */}
       </Box>
     </Box>
   );
 }
+        
+    

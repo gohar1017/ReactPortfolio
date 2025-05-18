@@ -1,0 +1,24 @@
+
+/* src/styles/global.css */
+:root {
+  --primary-main: #ff512f;
+  --secondary-main: #dd2476;
+  --background-default: #f9f9f9;
+  --background-paper: #ffffff;
+  --text-primary: #333333;
+  --text-secondary: #555555;
+  --shadow-color: rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] {
+  --primary-main: #ff7043;
+  --secondary-main: #ff4081;
+  --background-default: #121212;
+  --background-paper: #1e1e1e;
+  --text-primary: #ffffff;
+  --text-secondary: #bbbbbb;
+  --shadow-color: rgba(0, 0, 0, 0.5);
+}   
+* {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}   

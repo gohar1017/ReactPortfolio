@@ -61,19 +61,42 @@ export default function Contact() {
         </Typography>
 
         <Box display="flex" justifyContent="center" gap={2} mt={3}>
-          <IconButton color="primary" className={styles.socialIcon}>
-            <Facebook />
-          </IconButton>
-          <IconButton color="info" className={styles.socialIcon}>
-            <Twitter />
-          </IconButton>
-          <IconButton color="error" className={styles.socialIcon}>
-            <LinkedIn />
-          </IconButton>
-          <IconButton className={styles.socialIcon}>
-            <GitHub />
-          </IconButton>
-        </Box>
+  <IconButton 
+    color="primary" 
+    className={styles.socialIcon}
+    component="a"
+    href="https://www.facebook.com/profile.php?id=100041943426129"
+    target="_blank"
+  >
+    <Facebook />
+  </IconButton>
+  <IconButton 
+    color="info" 
+    className={styles.socialIcon}
+    component="a"
+    href="https://twitter.com/yourhandle"
+    target="_blank"
+  >
+    <Twitter />
+  </IconButton>
+  <IconButton 
+    color="error" 
+    className={styles.socialIcon}
+    component="a"
+    href="https://www.linkedin.com/in/ali-gohar-8a4443277"
+    target="_blank"
+  >
+    <LinkedIn />
+  </IconButton>
+  <IconButton 
+    className={styles.socialIcon}
+    component="a"
+    href="https://github.com/gohar1017"
+    target="_blank"
+  >
+    <GitHub />
+  </IconButton>
+</Box>
 
         <Typography mt={2} fontStyle="italic" color="text.secondary" textAlign="center">
           "Stay connected and explore my work!"

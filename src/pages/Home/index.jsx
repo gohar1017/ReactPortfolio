@@ -1,12 +1,15 @@
-import { Box, Typography, Button } from '@mui/material';
-import profileImage from '../../assets/Ali\'s Image.jpg';
+
+import { Box, Typography, Button, useMediaQuery } from '@mui/material';
+import profileImage from '../../assets/Ali\'s Image.png';
 import styles from './Home.module.css';
 
 export default function Home() {
+  const isMobile = useMediaQuery('(max-width:768px)');
+
   return (
     <Box className={styles.mainContent}>
-      <Box className={styles.homeContainer}>
-        <Box className={styles.profileImageContainer}>
+      <Box className={`${styles.homeContainer} ${isMobile ? styles.mobileLayout : ''}`}>
+        <Box className={`${styles.profileImageContainer} ${isMobile ? styles.mobileImage : ''}`}>
           <img 
             src={profileImage} 
             alt="Ali Gohar" 
@@ -18,22 +21,23 @@ export default function Home() {
           />
         </Box>
         
-        <Box className={styles.textContent}>
-          <Typography variant="h2" className={styles.heading}>
+        <Box className={`${styles.textContent} ${isMobile ? styles.mobileText : ''}`}>
+          <Typography variant={isMobile ? "h3" : "h2"} className={styles.heading}>
             Welcome to My Portfolio
           </Typography>
-          <Typography variant="h5" className={styles.subheading}>
+          <Typography variant={isMobile ? "h6" : "h5"} className={styles.subheading}>
             Ali Gohar
           </Typography>
           <Typography variant="body1" className={styles.description}>
             Web & Mobile App Developer passionate about crafting high-performance applications
           </Typography>
-          <Box className={styles.buttonGroup}>
+          <Box className={`${styles.buttonGroup} ${isMobile ? styles.mobileButtons : ''}`}>
             <Button 
               variant="contained" 
               color="primary" 
               className={styles.button}
               href="/profile"
+              size={isMobile ? "small" : "medium"}
             >
               View Profile
             </Button>
@@ -42,6 +46,7 @@ export default function Home() {
               color="primary" 
               className={styles.button}
               href="/contact"
+              size={isMobile ? "small" : "medium"}
             >
               Contact Me
             </Button>
